@@ -486,7 +486,7 @@ void udphandle::PackagingVision()
     int timeStr = timeDate .toTime_t();   				// 将当前时间转为时间戳
     uint8_t sbuf[512] = {0};
     //将map数据取出
-    FLY_SET_DATA fly[3];
+    FLY_SET_DATA fly[3]; // 三台无人机各自的参数设置，radius, carnum, heigh, direction, speed, covering
     int flyid[3];
     int sum = 0;
     QByteArray flyBuf;
@@ -516,10 +516,12 @@ void udphandle::PackagingVision()
             flydata.track_dist[i] = fly[i].radius.toInt();
             flydata.track_dist[3+i] = fly[i].height.toInt();
         }
+        // 小车0
         flydata.vehicle0[0] = idx[3]* 0.1;
         flydata.vehicle0[1] = idy[3]* 0.1;
         flydata.vehicle0[2] = idz[3]* 0.1;
         flydata.vehicle0[3] = idw[3]* 0.1;
+        // 小车1
         flydata.vehicle1[0] = idx[4]* 0.1;
         flydata.vehicle1[1] = idy[4]* 0.1;
         flydata.vehicle1[2] = idz[4]* 0.1;
