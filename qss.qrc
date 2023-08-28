@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qss/fly.png</file>
+        <file>qss/fly_on.png</file>
+        <file>qss/car.png</file>
+        <file>qss/fly_ui.png</file>
+    </qresource>
+</RCC>
